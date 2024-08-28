@@ -65,7 +65,6 @@ export class ReportService {
     const report = await this.prisma.reportTask.findUnique({
       where: { id: taskId },
     });
-    console.log(report);
     if (!report) {
       throw new HttpException('Report not found', HttpStatus.BAD_REQUEST);
     }
